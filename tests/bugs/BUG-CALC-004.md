@@ -1,7 +1,7 @@
 # [BUG][Calc] Build 4 khóa Integers only
 
 ## Found by Test Case
-TC-CALC-004, TC-CALC-010
+TC-DIV-001, TC-INT-001
 
 ## Requirement liên quan
 FR-CALC-03

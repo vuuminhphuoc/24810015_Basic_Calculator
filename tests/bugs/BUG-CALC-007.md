@@ -1,7 +1,7 @@
 # [BUG][Calc] Build 7 dùng answer cũ thay number1
 
 ## Found by Test Case
-TC-CALC-012
+TC-ADD-002
 
 ## Requirement liên quan
 FR-CALC-06

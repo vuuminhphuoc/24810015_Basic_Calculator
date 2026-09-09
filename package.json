@@ -1,0 +1,26 @@
+{
+  "name": "24810015_basic_caculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuuminhphuoc/24810015_basic_caculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vuuminhphuoc/24810015_basic_caculator/issues"
+  },
+  "homepage": "https://github.com/vuuminhphuoc/24810015_basic_caculator#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

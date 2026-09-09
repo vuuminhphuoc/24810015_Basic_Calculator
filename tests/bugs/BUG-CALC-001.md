@@ -1,7 +1,7 @@
 # [BUG][Calc] Build 1 không validate số
 
 ## Found by Test Case
-TC-CALC-006, TC-CALC-007
+TC-VAL-001, TC-VAL-002
 
 ## Requirement liên quan
 FR-CALC-05

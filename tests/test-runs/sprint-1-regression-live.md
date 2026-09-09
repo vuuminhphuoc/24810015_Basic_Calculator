@@ -4,15 +4,15 @@ Cùng script live như sprint-1. Mỗi dòng là Actual đo được, so với E
 
 | Build | TC | Expected | Actual live | Result | Bug |
 |---|---|---|---|---|---|
-| 1 (bỏ check số) | TC-CALC-006 Abc+9 | Number 1 is not a number | ans=NaN, err="" | Fail | BUG-CALC-001 |
-| 2 (đảo Add/Concat) | TC-CALC-001 10+9 Add | 19 | 109 | Fail | BUG-CALC-002 |
-| 2 (đảo Add/Concat) | TC-CALC-008 ab+cd Concat | abcd | (đảo ngược, xem code) | Fail | BUG-CALC-002 |
-| 3 (luôn coi là số) | TC-CALC-008 ab+cd Concat | abcd, integer ẩn | err="Number 1 is not a number", integer hiện+enabled | Fail | BUG-CALC-003 |
-| 4 (khóa integer) | TC-CALC-004 10/4 unchecked | 2.5, checkbox tự do | intDisabled=true ngay sau chọn build (xem nuance) | Fail | BUG-CALC-004 |
-| 5 (hỏng Clear) | TC-CALC-013 | clearButton disabled | disabled=true ngay sau `buildChanged()` (xem nuance) | Fail | BUG-CALC-005 |
-| 6 (không check chia 0) | TC-CALC-005 10/0 | Divide by zero error! | ans=Infinity, err="" | Fail | BUG-CALC-006 |
-| 7 (dùng answer cũ) | TC-CALC-012 5+3 rồi 2+3 | 8 rồi 5 | 3 (0+3) rồi 6 (3+3) | Fail | BUG-CALC-007 |
-| 8 (đảo số) | TC-CALC-011 6-2 | 4 | -4 | Fail | BUG-CALC-008 |
+| 1 (bỏ check số) | TC-VAL-001 Abc+9 | Number 1 is not a number | ans=NaN, err="" | Fail | BUG-CALC-001 |
+| 2 (đảo Add/Concat) | TC-ADD-001 10+9 Add | 19 | 109 | Fail | BUG-CALC-002 |
+| 2 (đảo Add/Concat) | TC-CON-001 ab+cd Concat | abcd | (đảo ngược, xem code) | Fail | BUG-CALC-002 |
+| 3 (luôn coi là số) | TC-CON-001 ab+cd Concat | abcd, integer ẩn | err="Number 1 is not a number", integer hiện+enabled | Fail | BUG-CALC-003 |
+| 4 (khóa integer) | TC-DIV-001 10/4 unchecked | 2.5, checkbox tự do | intDisabled=true ngay sau chọn build (xem nuance) | Fail | BUG-CALC-004 |
+| 5 (hỏng Clear) | TC-CLEAR-001 | clearButton disabled | disabled=true ngay sau `buildChanged()` (xem nuance) | Fail | BUG-CALC-005 |
+| 6 (không check chia 0) | TC-DIV-002 10/0 | Divide by zero error! | ans=Infinity, err="" | Fail | BUG-CALC-006 |
+| 7 (dùng answer cũ) | TC-ADD-002 5+3 rồi 2+3 | 8 rồi 5 | 3 (0+3) rồi 6 (3+3) | Fail | BUG-CALC-007 |
+| 8 (đảo số) | TC-SUB-002 6-2 | 4 | -4 | Fail | BUG-CALC-008 |
 | 9 (mất element) | check UI sau chọn build | đủ ô nhập + nút | n2 hidden+disabled, calculate hidden+disabled | Fail | BUG-CALC-009 |
 
 Nuance trung thực:

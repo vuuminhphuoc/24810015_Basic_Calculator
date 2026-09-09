@@ -6,7 +6,7 @@ labels: ["type: bug"]
 ---
 
 ## Found by Test Case
-TC-CALC-XXX
+TC-<MODULE>-XXX
 
 ## Requirement liên quan
 FR-CALC-XX

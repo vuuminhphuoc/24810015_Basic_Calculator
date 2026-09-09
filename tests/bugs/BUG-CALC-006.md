@@ -1,7 +1,7 @@
 # [BUG][Calc] Build 6 không check chia 0
 
 ## Found by Test Case
-TC-CALC-005
+TC-DIV-002
 
 ## Requirement liên quan
 FR-CALC-04

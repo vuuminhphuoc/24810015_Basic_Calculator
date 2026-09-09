@@ -1,7 +1,7 @@
 # [BUG][Calc] Build 3 luôn coi Concatenate là số
 
 ## Found by Test Case
-TC-CALC-008
+TC-CON-001
 
 ## Requirement liên quan
 FR-CALC-02

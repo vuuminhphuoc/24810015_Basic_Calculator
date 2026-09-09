@@ -6,7 +6,7 @@ labels: ["type: task"]
 ---
 
 ## Test Case IDs
-TC-CALC-XXX
+TC-<MODULE>-XXX
 
 ## Sprint / Build
 Prototype

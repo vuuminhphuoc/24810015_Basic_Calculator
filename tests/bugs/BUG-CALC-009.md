@@ -1,7 +1,7 @@
 # [BUG][Calc] Build 9 ẩn number2 và nút Calculate
 
 ## Found by Test Case
-Check UI Build 9 (mở rộng từ mọi TC cần 2 ô nhập)
+TC-CLEAR-001 (phát hiện khi thực hiện flow TC này: không có ô Second number và nút Calculate để chạy)
 
 ## Requirement liên quan
 FR-CALC-07
@@ -20,5 +20,8 @@ Build `9`
 
 ## Actual result
 `number2Field` + `calculateButton` bị `hidden+disabled` (trong `buildChanged()`).
+
+## Evidence
+`tests/evidence/B9-ui.jpg`
 
 Labels: `type: bug`, `module: calc`, `severity: critical`

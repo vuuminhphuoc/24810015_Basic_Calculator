@@ -1,7 +1,7 @@
 # [BUG][Calc] Build 5 disable nút Clear
 
 ## Found by Test Case
-TC-CALC-013
+TC-CLEAR-001
 
 ## Requirement liên quan
 FR-CALC-06

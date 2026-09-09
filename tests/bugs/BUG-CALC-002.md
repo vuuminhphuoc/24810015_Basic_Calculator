@@ -1,7 +1,7 @@
 # [BUG][Calc] Build 2 đảo Add và Concatenate
 
 ## Found by Test Case
-TC-CALC-001, TC-CALC-008, TC-CALC-009
+TC-ADD-001, TC-CON-001, TC-CON-002
 
 ## Requirement liên quan
 FR-CALC-01 + FR-CALC-02
