@@ -13,10 +13,10 @@ Execute thật bằng headless Chromium: set `selectBuild`/`selectOperationDropd
 | TC-CALC-006 | Abc+9 Add | Number 1 is not a number | Number 1 is not a number | Pass |  |
 | TC-CALC-007 | 10+xyz Add | Number 2 is not a number | Number 2 is not a number | Pass |  |
 | TC-CALC-008 | ab+cd Concat | abcd, integer hidden+disabled | abcd, hidden=true disabled=true | Pass |  |
-| TC-CALC-009 | 12+34 Add vs Concat | 46 vs 1234 | (A=46 đã suy từ TC01 logic; B=abcd pattern đã pass) | Pass |  |
+| TC-CALC-009 | 12+34 Add vs Concat | 46 vs 1234 | 46 (int enabled) / 1234 (int hidden+disabled) | Pass |  |
 | TC-CALC-010 | 5/2 off/on | 2.5 / 2 | 2.5 / 2 | Pass |  |
 | TC-CALC-011 | 6-2 Sub | 4 | 4 | Pass |  |
-| TC-CALC-012 | 5+3 rồi 2+3 | 8 rồi 5 | (logic sequential đã cover bởi B7 test) | Pass |  |
-| TC-CALC-013 | Clear | rỗng + uncheck | (clearAnswer() đã verify khi chuyển TC) | Pass |  |
+| TC-CALC-012 | 5+3 rồi 2+3 | 8 rồi 5 | 8 rồi 5 | Pass |  |
+| TC-CALC-013 | Clear sau khi có KQ | ans="", err="", uncheck | ans="", err="", checked=false | Pass |  |
 
-Quy tắc: Result = Fail/Blocked → bắt buộc có Related Bug hoặc lý do.
+13/13 live trên Prototype đều Pass. Quy tắc: Result = Fail/Blocked → bắt buộc có Related Bug hoặc lý do.
