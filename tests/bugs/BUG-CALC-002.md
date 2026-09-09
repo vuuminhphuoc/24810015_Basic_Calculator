@@ -25,4 +25,4 @@ Add ra chuỗi (`109`), Concat ra số. JS: `if (selectedBuild==2)` hoán `selec
 ## Evidence
 Đoạn hoán selection trong `calculate()`.
 
-Labels: `type: bug`, `module: calc`, `severity: critical`
+Labels: `type: bug`, `module: addition, concatenation`, `severity: critical`

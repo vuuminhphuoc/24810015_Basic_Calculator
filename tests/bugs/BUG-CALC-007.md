@@ -22,4 +22,4 @@ Lần 2 = `5`
 ## Actual result
 `11` (lấy `answer=8` làm `num1`: `8+3`). JS: `if (selectedBuild==7) num1=answer`.
 
-Labels: `type: bug`, `module: calc`, `severity: critical`
+Labels: `type: bug`, `module: addition`, `severity: critical`

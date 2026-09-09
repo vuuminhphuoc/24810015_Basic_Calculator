@@ -21,4 +21,4 @@ Build `3`
 ## Actual result
 `Number 1 is not a number`. JS `setIfMathematical()`: Build 3 ép `isNumber=true`.
 
-Labels: `type: bug`, `module: calc`, `severity: major`
+Labels: `type: bug`, `module: concatenation`, `severity: major`

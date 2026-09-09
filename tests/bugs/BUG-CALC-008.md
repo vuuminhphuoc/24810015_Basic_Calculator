@@ -24,4 +24,4 @@ Build `8`
 ## Evidence
 Chỉ dùng op không giao hoán mới bắt được — lý do TC-SUB-002 dùng Subtract.
 
-Labels: `type: bug`, `module: calc`, `severity: major`
+Labels: `type: bug`, `module: subtraction`, `severity: major`

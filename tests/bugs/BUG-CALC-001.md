@@ -25,5 +25,5 @@ Không báo lỗi, tính bậy (JS bỏ qua `isNaN` khi `selectedBuild==1`).
 ## Evidence
 Code: `if(isNaN(num1) && isNumber && selectedBuild != 1)` — Build 1 skip check.
 
-Labels: `type: bug`, `module: calc`, `severity: major`, `found-by: test-case`
+Labels: `type: bug`, `module: input-validation`, `severity: major`, `found-by: test-case`
 Liên kết ngược: test-run ghi `Fail, Related Bug=BUG-CALC-001`.

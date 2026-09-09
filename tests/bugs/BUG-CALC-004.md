@@ -21,4 +21,4 @@ Build `4`
 ## Actual result
 `2` (luôn `parseInt`). `setFieldStatus()`: Build 4 disable + checked checkbox khi `isNumber`.
 
-Labels: `type: bug`, `module: calc`, `severity: major`
+Labels: `type: bug`, `module: integer-toggle`, `severity: major`

@@ -24,4 +24,4 @@ Build `9`
 ## Evidence
 `tests/evidence/B9-ui.jpg`
 
-Labels: `type: bug`, `module: calc`, `severity: critical`
+Labels: `type: bug`, `module: build-selection`, `severity: critical`

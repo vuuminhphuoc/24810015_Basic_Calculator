@@ -21,4 +21,4 @@ Build `6`
 ## Actual result
 Không lỗi, ra `Infinity`. JS: `if(num2==0 && selectedBuild != 6)` bỏ check.
 
-Labels: `type: bug`, `module: calc`, `severity: major`
+Labels: `type: bug`, `module: division`, `severity: major`

@@ -22,4 +22,4 @@ Xóa answer/error/uncheck
 ## Actual result
 `clearButton.disabled=true` (trong `buildChanged()`), không bấm được.
 
-Labels: `type: bug`, `module: calc`, `severity: minor`
+Labels: `type: bug`, `module: clear`, `severity: minor`
