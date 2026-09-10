@@ -15,4 +15,4 @@ Prototype
 -
 
 ## Result cần ghi
-Pass / Fail / Blocked + Related Bug nếu Fail/Blocked
+Pass / Fail / Blocked / Skipped + Related Bug (Bug ID) nếu Fail/Blocked

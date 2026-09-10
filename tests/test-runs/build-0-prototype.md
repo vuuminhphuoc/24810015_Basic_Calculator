@@ -1,25 +1,32 @@
-# Test Run — Build 0 Prototype (LIVE 2026-09-09)
+# Test Run — Build 0 Prototype (oracle, đúng)
 
-SUT: `https://testsheepnz.github.io/BasicCalculator.html`, Build = `Prototype`.
-Execute thật bằng headless Chromium: set `selectBuild`/`selectOperationDropdown`, nhập `number1Field`/`number2Field`, click `calculateButton`, đợi ~1.7s (do `randomTimeout`), đọc `numberAnswerField` + `errorMsgField`.
-Playwright mirror: `tests/test-scripts/<module>/*.spec.js` (13 passed, 1 failed).
+- SUT: `https://testsheepnz.github.io/BasicCalculator.html`
+- Build: `Prototype` (bản chuẩn, dùng làm oracle cho mọi build khác)
+- Ngày chạy: 2026-09-09
+- Tester: `24810015`
+- Test environment: `Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63`
+- Spec: `tests/test-scripts/calc/matrix-sweep.spec.js` (số liệu từ `tests/test-runs/raw/sweep.json`, Playwright JSON reporter, workers 1)
 
-| Test Case | Input | Expected | Actual live | Result |
-|---|---|---|---|---|
-| TC-ADD-001 | 10+9 Add off | 19 | 19, err="" | Pass |
-| TC-ADD-002 | 5+3 rồi 2+3 | 8 rồi 5 | 8 rồi 5 | Pass |
-| TC-SUB-001 | 10-9 Sub | 1 | 1 | Pass |
-| TC-SUB-002 | 6-2 Sub | 4 | 4 | Pass |
-| TC-MUL-001 | 10x9 Mul | 90 | 90 | Pass |
-| TC-DIV-001 | 10/4 Div off | 2.5 | 2.5 | Pass |
-| TC-DIV-002 | 10/0 Div | Divide by zero error! | Divide by zero error!, ans="" | Pass |
-| TC-DIV-003 | UI sau lỗi chia 0 | 2 nút enabled lại | cả 2 disabled, spinner kẹt | Fail |
-| TC-VAL-001 | Abc+9 Add | Number 1 is not a number | Number 1 is not a number | Pass |
-| TC-VAL-002 | 10+xyz Add | Number 2 is not a number | Number 2 is not a number | Pass |
-| TC-CON-001 | ab+cd Concat | abcd, integer hidden+disabled | abcd, hidden=true disabled=true | Pass |
-| TC-CON-002 | 12+34 Add vs Concat | 46 vs 1234 | 46 (int enabled) / 1234 (int hidden+disabled) | Pass |
-| TC-INT-001 | 5/2 off/on | 2.5 / 2 | 2.5 / 2 | Pass |
-| TC-CLEAR-001 | Clear sau khi có KQ | ans="", err="", uncheck | ans="", err="", checked=false | Pass |
+| Test Case ID | Test title | Expected | Actual | Result | Related Bug |
+|---|---|---|---|---|---|
+| TC-ADD-001 | Cộng 10+9 (Add) | ans=`19`, err=`` | như Expected | Pass |  |
+| TC-ADD-002 | Cộng tuần tự 5+3 rồi 2+3 | lần 1 ans=`8`, lần 2 ans=`5` | như Expected | Pass |  |
+| TC-SUB-001 | Trừ 10−9 (Sub) | ans=`1` | như Expected | Pass |  |
+| TC-SUB-002 | Trừ 6−2 (Sub) | ans=`4` | như Expected | Pass |  |
+| TC-MUL-001 | Nhân 10×9 (Mul) | ans=`90` | như Expected | Pass |  |
+| TC-DIV-001 | Chia 10/4 (Div, integer tắt) | ans=`2.5` | như Expected | Pass |  |
+| TC-DIV-002 | Chia cho 0 (10/0) | ans=``, err=`Divide by zero error!` | như Expected | Pass |  |
+| TC-DIV-003 | Phục hồi UI sau lỗi chia 0 | `calculateButton` + `clearButton` enabled lại | cả 2 nút vẫn `disabled`, UI kẹt ở `Calculating` (`tests/test-runs/raw/sweep.json`: `toBeEnabled #calculateButton` fail) | Fail | BUG-CALC-010 |
+| TC-VAL-001 | Validate số ở ô 1 (Abc+9, Add) | ans=``, err=`Number 1 is not a number` | như Expected | Pass |  |
+| TC-VAL-002 | Validate số ở ô 2 (10+xyz, Add) | ans=``, err=`Number 2 is not a number` | như Expected | Pass |  |
+| TC-CON-001 | Nối chuỗi ab+cd (Concat) | ans=`abcd` | như Expected | Pass |  |
+| TC-CON-002 | So sánh Add vs Concat (12+34) | Add ans=`46`, Concat ans=`1234` | như Expected | Pass |  |
+| TC-INT-001 (unchecked) | Chia 5/2, integer tắt | ans=`2.5` | như Expected | Pass |  |
+| TC-INT-001 (checked) | Chia 5/2, integer bật | ans=`2` | như Expected | Pass |  |
+| TC-CLEAR-001 | Nút Clear xóa kết quả | Clear enabled, sau Clear ans=`` | như Expected | Pass |  |
 
-13 Pass / 1 Fail (TC-DIV-003 → BUG-CALC-010, lỗi thật trên Prototype).
-Quy tắc: Result = Fail/Blocked → bắt buộc có Related Bug hoặc lý do.
+**Tổng kết: Pass: 14 / Fail: 1 / Tổng: 15.**
+
+## Bugs phát hiện/xác nhận trên build này
+
+- `BUG-CALC-010` — Nhánh chia-0 trong `calculate()` return mà không gọi `unlockCalculate()`, UI kẹt ở `Calculating` (2 nút vẫn `disabled`). Phát hiện bởi TC-DIV-003. Đây là lỗi có sẵn ngay trên Prototype.

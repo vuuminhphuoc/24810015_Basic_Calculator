@@ -22,5 +22,21 @@ Calc / Functional / Decision Table (Operation=Concatenate → isNumber=false)
 ## Expected result
 Answer = `abcd`, không lỗi, checkbox Integers only bị ẩn.
 
-## Status / Related bugs
-Not Run / BUG-CALC-002 (Build 2 đảo Add/Concat), BUG-CALC-003 (Build 3 luôn coi là số)
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/concatenation/concatenation.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Answer = `abcd`, không lỗi, checkbox hidden + disabled. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+BUG-CALC-002, BUG-CALC-003
+
+## Comments
+Fail trên build 2 (BUG-CALC-002: đảo Add/Concat) và build 3 (BUG-CALC-003: luôn coi là số → báo not a number). Dùng input chữ để ép nhánh string.

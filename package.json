@@ -1,25 +1,21 @@
 {
-  "name": "24810015_basic_caculator",
+  "name": "24810015-basic-calculator-tests",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Test project cho Basic Calculator (testsheepnz) - mon Kiem thu phan mem",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:sweep": "playwright test tests/test-scripts/calc/matrix-sweep.spec.js",
+    "audit": "node audit.cjs && node tests/bugs-catalog.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuuminhphuoc/24810015_basic_caculator.git"
+    "url": "git+https://github.com/vuuminhphuoc/24810015_Basic_Calculator.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vuuminhphuoc/24810015_basic_caculator/issues"
-  },
-  "homepage": "https://github.com/vuuminhphuoc/24810015_basic_caculator#readme",
   "devDependencies": {
     "@playwright/test": "^1.63.0"
   }

@@ -4,6 +4,19 @@ Spec: `tests/test-scripts/calc/matrix-sweep.spec.js`. Assert oracle Prototype ch
 Ngày chạy: 2026-09-09, workers 1, `expect timeout 2000ms`.
 Kết quả: **95 passed / 41 failed / 0 flaky / 136 total**.
 
+Chi tiết từng build (mỗi file liệt kê đủ test case đã chạy, Actual thực đo từ `tests/test-runs/raw/sweep.json`):
+
+- [Build 0 Prototype](build-0-prototype.md) — Pass 14 / Fail 1.
+- [Build 1](build-1.md) — Pass 12 / Fail 3.
+- [Build 2](build-2.md) — Pass 8 / Fail 7.
+- [Build 3](build-3.md) — Pass 13 / Fail 2.
+- [Build 4](build-4.md) — Pass 12 / Fail 3.
+- [Build 5](build-5.md) — Pass 14 / Fail 1.
+- [Build 6](build-6.md) — Pass 14 / Fail 1.
+- [Build 7](build-7.md) — Pass 3 / Fail 12.
+- [Build 8](build-8.md) — Pass 5 / Fail 10.
+- [Build 9](build-9.md) — Pass 0 / Fail 1 / Blocked 14.
+
 | Build | Pass | Fail | Fail là |
 |---|---|---|---|
 | B0 Prototype | 14 | 1 | TC-DIV-003 → BUG-CALC-010 |
@@ -13,9 +26,9 @@ Kết quả: **95 passed / 41 failed / 0 flaky / 136 total**.
 | B4 | 12 | 3 | TC-DIV-001, TC-INT-001 → BUG-CALC-004; TC-DIV-003 → BUG-CALC-010 |
 | B5 | 14 | 1 | TC-DIV-003 → BUG-CALC-010 (TC-CLEAR-001 pass vì chu kỳ calculate mở lại nút — xem nuance ở `build-5.md`) |
 | B6 | 14 | 1 | TC-DIV-002 → BUG-CALC-006 (TC-DIV-003 pass vì nhánh Infinity có unlock) |
-| B7 | 3 | 12 | hàng loạt → BUG-CALC-007 (pass: TC-DIV-002, TC-VAL-002, TC-CLEAR-001) |
+| B7 | 3 | 12 | hàng loạt → BUG-CALC-007 (pass: TC-DIV-002, TC-VAL-002, TC-CLEAR-001); TC-DIV-003 → BUG-CALC-010 (nhánh chia-0 vẫn tới được, kẹt nút như Prototype) |
 | B8 | 5 | 10 | SUB/DIV/VAL/CON/INT → BUG-CALC-008 (pass: ADD-001, MUL-001, ADD-002, CLEAR-001, DIV-003) |
-| B9 | 0 | 1 | UI ẩn → BUG-CALC-009 |
+| B9 | 0 | 1 | UI ẩn → BUG-CALC-009 (14 TC tính toán còn lại: Blocked) |
 
 Mọi fail đều map được về 1 trong 10 bugs đã biết, không có fail lạ.
-Raw log: `sweep.json` (cùng thư mục repo, không nộp zip).
+Raw log: `tests/test-runs/raw/sweep.json` (raw log Playwright JSON reporter).

@@ -21,5 +21,21 @@ Calc / Functional / Equivalence Partitioning
 ## Expected result
 Answer = `2.5`, không lỗi.
 
-## Status / Related bugs
-Not Run / None
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/division/division.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Answer = `2.5`, không lỗi. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+None
+
+## Comments
+Dùng phép chia ra số lẻ để kiểm tra hiển thị thập phân khi unchecked; cặp đối chứng với TC-INT-001 (checked → `2`).

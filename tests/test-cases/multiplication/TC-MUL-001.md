@@ -21,5 +21,21 @@ Calc / Functional / Equivalence Partitioning
 ## Expected result
 Answer = `90`, không lỗi.
 
-## Status / Related bugs
-Not Run / None
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/multiplication/multiplication.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Answer = `90`, không lỗi. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+None
+
+## Comments
+TC baseline cho phép Multiply, phủ đủ 4 phép số học cùng TC-ADD-001/TC-SUB-001/TC-DIV-001.

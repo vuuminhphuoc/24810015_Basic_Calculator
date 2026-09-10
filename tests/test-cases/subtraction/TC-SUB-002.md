@@ -21,5 +21,21 @@ Calc / Functional / Equivalence Partitioning (dùng op không giao hoán)
 ## Expected result
 Answer = `4`. (Nếu đảo thành `2-6` sẽ ra `-4` → sai.)
 
-## Status / Related bugs
-Not Run / BUG-CALC-008 (Build 8 đảo number1/number2)
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/subtraction/subtraction.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Answer = `4`. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+BUG-CALC-008
+
+## Comments
+Fail trên build 8 (BUG-CALC-008: đảo number1/number2 → ra `-4`). Cố tình dùng phép trừ không giao hoán để lỗi đảo toán hạng không thể ẩn mình.

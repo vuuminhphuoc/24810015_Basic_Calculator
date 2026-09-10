@@ -20,5 +20,21 @@ Calc / Functional / State-based (giá trị `answer` toàn cục)
 ## Expected result
 Lần 1 = `8`, lần 2 = `5`.
 
-## Status / Related bugs
-Not Run / BUG-CALC-007 (Build 7 dùng `answer` cũ thay `num1`: lần 2 ra `8+3=11`)
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/addition/addition.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Lần 1 = `8`, lần 2 = `5`. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+BUG-CALC-007
+
+## Comments
+Fail trên build 7 (BUG-CALC-007: dùng `answer` cũ thay `number1` ở lần tính thứ 2). Thiết kế state-based: tính 2 lần liên tiếp trên cùng trang để bắt lỗi dùng state cũ.

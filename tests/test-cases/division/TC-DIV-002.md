@@ -21,5 +21,21 @@ Calc / Functional / Equivalence Partitioning (invalid class riêng)
 ## Expected result
 `errorMsgField` = `Divide by zero error!`
 
-## Status / Related bugs
-Not Run / BUG-CALC-006 (Build 6 không check chia 0)
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/division/division.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+`errorMsgField` = `Divide by zero error!`, Answer = rỗng. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+BUG-CALC-006
+
+## Comments
+Fail trên build 6 (BUG-CALC-006: không check chia 0 → ra `Infinity`). Lưu ý: ngay sau lỗi này UI kẹt ở "Calculating" — xem TC-DIV-003 / BUG-CALC-010.

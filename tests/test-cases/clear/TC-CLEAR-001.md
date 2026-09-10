@@ -20,5 +20,21 @@ Không cần dữ liệu mới.
 ## Expected result
 `numberAnswerField` = rỗng, `errorMsgField` = rỗng, `integerSelect` unchecked.
 
-## Status / Related bugs
-Not Run / BUG-CALC-005 (Build 5 disable Clear)
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/clear/clear.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Answer = rỗng, error = rỗng, `integerSelect` unchecked. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+BUG-CALC-005
+
+## Comments
+Fail trên build 5 (BUG-CALC-005: nút Clear disabled ngay sau chọn build). Thiết kế chạy sau TC-ADD-001 để luôn có state mà xóa.

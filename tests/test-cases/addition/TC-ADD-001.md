@@ -25,5 +25,21 @@ Calc / Functional / Equivalence Partitioning
 ## Expected result
 Answer = `19`, không có thông báo lỗi.
 
-## Status / Related bugs
-Not Run / None
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/addition/addition.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Answer = `19`, `errorMsgField` = rỗng. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+None
+
+## Comments
+TC baseline cho lớp hợp lệ của phép Add. Cặp đối chứng với TC-CON-002 để phát hiện đảo Add↔Concatenate.

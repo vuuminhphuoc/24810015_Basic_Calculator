@@ -1,5 +1,5 @@
 // Audit chéo: TC files ↔ index ↔ matrix ↔ bugs ↔ catalog ↔ specs ↔ evidence.
-// Run: node audit.cjs. In MISMATCH nếu vênh, AUDIT_OK nếu khớp. Delete sau khi xanh.
+// Run: node audit.cjs (hoac npm run audit). In MISMATCH neu venh, AUDIT_OK neu khop.
 const fs = require('fs');
 const path = require('path');
 
@@ -13,9 +13,9 @@ function walk(d, out = []) {
 }
 const fail = (m) => { console.error('MISMATCH: ' + m); process.exitCode = 1; };
 
-// 1. TC files: tên = H1, đủ 7 mục template
+// 1. TC files: tên = H1, đủ 12 mục template
 const tcFiles = walk('tests/test-cases').filter((f) => /TC-[A-Z]+-\d+\.md$/.test(f));
-const SECTIONS = ['Requirement ID', 'Module / Test type / Technique', 'Preconditions', 'Test data', 'Test steps', 'Expected result', 'Status / Related bugs'];
+const SECTIONS = ['Requirement ID', 'Module / Test type / Technique', 'Preconditions', 'Test data', 'Test steps', 'Expected result', 'Test environment', 'Script', 'Observed result', 'Status', 'Bug ID', 'Comments'];
 const tcIds = [];
 for (const f of tcFiles) {
   const s = fs.readFileSync(f, 'utf8');

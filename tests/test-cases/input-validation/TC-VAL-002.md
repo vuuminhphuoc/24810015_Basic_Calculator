@@ -21,5 +21,21 @@ Calc / Functional / Equivalence Partitioning (invalid)
 ## Expected result
 `errorMsgField` = `Number 2 is not a number`
 
-## Status / Related bugs
-Not Run / BUG-CALC-001 (Build 1 bỏ check số)
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/input-validation/input-validation.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+`errorMsgField` = `Number 2 is not a number`. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+BUG-CALC-001
+
+## Comments
+Fail trên build 1 (BUG-CALC-001: bỏ check số → ra `NaN`, không báo lỗi). Đối xứng với TC-VAL-001 để phủ cả 2 ô nhập.

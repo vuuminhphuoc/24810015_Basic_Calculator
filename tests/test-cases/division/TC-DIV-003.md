@@ -23,5 +23,21 @@ Calc / Functional / State-based (trạng thái lock/unlock của `calculate()`)
 ## Expected result
 Báo `Divide by zero error!` và 2 nút enabled lại.
 
-## Status / Related bugs
-Fail / BUG-CALC-010 (nhánh chia-0 `return` thiếu `unlockCalculate()`)
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/division/division.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Cả 2 nút vẫn disabled, spinner kẹt ở "Calculating". Không khớp Expected result.
+
+## Status
+Fail
+
+## Bug ID
+BUG-CALC-010
+
+## Comments
+Fail ngay trên Prototype: nhánh chia-0 trong `calculate()` return mà không gọi `unlockCalculate()`. TC state-based kiểm tra khả năng phục hồi sau lỗi — là TC duy nhất Fail trên oracle.

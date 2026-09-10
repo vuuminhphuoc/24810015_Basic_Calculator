@@ -21,5 +21,21 @@ Calc / Functional / Equivalence Partitioning
 ## Expected result
 Unchecked = `2.5`, checked = `2`.
 
-## Status / Related bugs
-Not Run / BUG-CALC-004 (Build 4 khóa integer: checked+disabled)
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/integer-toggle/integer-toggle.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Unchecked = `2.5`, checked = `2`. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+BUG-CALC-004
+
+## Comments
+Fail trên build 4 (BUG-CALC-004: khóa integer, checkbox checked + disabled). Dùng `5/2` để on/off cho 2 kết quả khác nhau rõ rệt.

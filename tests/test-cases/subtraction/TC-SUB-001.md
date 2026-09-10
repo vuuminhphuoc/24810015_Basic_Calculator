@@ -21,5 +21,21 @@ Calc / Functional / Equivalence Partitioning
 ## Expected result
 Answer = `1`, không lỗi.
 
-## Status / Related bugs
-Not Run / None
+## Test environment
+Chrome/Chromium headless 1280x900, Windows 11, Playwright 1.63; Build = Prototype (oracle).
+
+## Script
+- `tests/test-scripts/subtraction/subtraction.spec.js`
+- `tests/test-scripts/calc/matrix-sweep.spec.js` (full sweep 10 build)
+
+## Observed result
+Answer = `1`, không lỗi. Khớp Expected result.
+
+## Status
+Pass
+
+## Bug ID
+None
+
+## Comments
+TC baseline cho phép Subtract. Case bắt đảo toán hạng nằm ở TC-SUB-002 (dùng cặp không giao hoán `6-2`).
