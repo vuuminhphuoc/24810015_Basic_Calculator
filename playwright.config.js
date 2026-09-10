@@ -6,4 +6,5 @@ module.exports = defineConfig({
   workers: 1, // trang SUT bên ngoài, chạy tuần tự cho lịch sự
   use: { headless: true },
   reporter: 'list',
+  expect: { timeout: 2000 },
 });

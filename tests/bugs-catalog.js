@@ -16,6 +16,7 @@ const BUGS = [
   { id: 'BUG-CALC-007', build: 7, severity: 'Critical', foundBy: ['TC-ADD-002'], symptom: 'Dùng answer cũ thay number1: 5+3→3, 2+3→6' },
   { id: 'BUG-CALC-008', build: 8, severity: 'Major', foundBy: ['TC-SUB-002'], symptom: 'Đảo toán hạng: 6-2 ra -4' },
   { id: 'BUG-CALC-009', build: 9, severity: 'Critical', foundBy: ['TC-CLEAR-001'], symptom: 'Ẩn number2Field + calculateButton' },
+  { id: 'BUG-CALC-010', build: 0, severity: 'Major', foundBy: ['TC-DIV-002', 'TC-DIV-003'], symptom: 'Prototype: nhánh chia-0 thiếu unlockCalculate, UI kẹt Calculating' },
 ];
 
 if (require.main === module) {

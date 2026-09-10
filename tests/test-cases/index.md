@@ -10,7 +10,8 @@ Nguồn suy ra (không phải SRS chính thức): đoạn Instructions trên tra
 | TC-SUB-002 | subtraction | `6-2=4` (op không giao hoán, bắt đảo toán hạng) | EP |
 | TC-MUL-001 | multiplication | Multiply `10*9=90` | EP |
 | TC-DIV-001 | division | Divide `10/4=2.5` unchecked | EP |
-| TC-DIV-002 | division | Divide by zero → lỗi | EP invalid |
+| TC-DIV-002 | division | Divide by zero → lỗi (nhưng UI kẹt) | EP invalid |
+| TC-DIV-003 | division | UI phục hồi sau lỗi chia 0 (Fail cả Prototype) | State-based |
 | TC-VAL-001 | input-validation | Number1 `Abc` → lỗi | EP invalid |
 | TC-VAL-002 | input-validation | Number2 `xyz` → lỗi | EP invalid |
 | TC-CON-001 | concatenation | Concat `ab+cd=abcd`, ẩn integer | Decision Table |
@@ -18,5 +19,5 @@ Nguồn suy ra (không phải SRS chính thức): đoạn Instructions trên tra
 | TC-INT-001 | integer-toggle | `5/2`: off=`2.5`, on=`2` | EP |
 | TC-CLEAR-001 | clear | Clear xóa answer/error/uncheck | EP |
 
-Quy ước mã: `TC-[MODULE]-[NUMBER]`, không tái dùng ID đã xóa.
-Playwright mirror: `tests/test-scripts/calc/calc.spec.js` (Prototype) + `builds.spec.js` (9 builds, `test.fail`).
+14 TC. Quy ước mã: `TC-[MODULE]-[NUMBER]`, không tái dùng ID đã xóa.
+Playwright mirror: `tests/test-scripts/<module>/*.spec.js` (Prototype) + `calc/builds.spec.js` (9 builds, `test.fail`) + `calc/matrix-sweep.spec.js` (full sweep).
